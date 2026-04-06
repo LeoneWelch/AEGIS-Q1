@@ -1,0 +1,372 @@
+¨£Mù/* 1. Utiliser un box-sizing plus intuitif */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Retirer les marges par défaut pour tout le monde */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Permettre des hauteurs en pourcentage et une base propre */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5; /* Meilleure lisibilité que le '1' de Meyer */
+  -webkit-font-smoothing: antialiased; /* Rendu des polices plus lisse */
+}
+
+/* 4. Améliorer le rendu des médias (essentiel pour le responsive) */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 5. Éviter que les textes débordent (très utile sur mobile) */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 6. Harmoniser les polices des formulaires (qui ne l'héritent pas par défaut) */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Supprimer les animations pour les personnes qui les supportent mal (Accessibilité) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@font-face {
+  font-family: 'Helvetica01';
+  src: url('/font/HelveticaNeue-01.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'HelveticaLight';
+  src: url('/font/HelveticaNeue-Light-08.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'HelveticaMedium';
+  src: url('/font/HelveticaNeue-Medium-11.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'HelveticaThin';
+  src: url('/font/HelveticaNeue-Thin-13.woff2') format('woff2');
+}
+
+.container__image--background{
+  /* background-color: red; */
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: -10;
+}
+
+.image--background {
+  width: 100%;       
+  height: 100%;     
+  object-fit: cover;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    overflow: hidden;
+    max-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+/* header bar de navigation */
+
+header {
+  width: 97vw;
+  margin-left: 1.5vw;
+  height: 4vh;
+  display: flex;
+  justify-content: space-between;
+  z-index: 99;
+  /* background-color: orange; */
+  font-size: 2.4vh;
+  font-family: 'HelveticaLight';
+  margin-top: 1vh;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+.header__account {
+  display: flex;
+  /* background-color: red; */
+}
+
+.header__btn--inscription {
+  /* --- DEBUT GLASSMORPHISM --- */
+  background: rgba(0, 21, 255, 0.6); /* Couleur bleue avec 60% d'opacité (transparence) */
+  backdrop-filter: blur(10px);       /* Effet de flou sur ce qui se trouve DERRIÈRE la div */
+  -webkit-backdrop-filter: blur(10px); /* Pour que le flou fonctionne sur les navigateurs Safari/Apple */
+  /* --- FIN GLASSMORPHISM --- */
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  color: white;
+  border-radius: 5px;
+  width: 25vw;
+    transition: background 0.3s ease; /* Animation fluide au survol */
+
+}
+
+
+.header__btn--inscription:hover {
+  background: rgba(0, 21, 255, 0.4); 
+}
+
+
+.header__btn--connexion{
+  /* --- DEBUT GLASSMORPHISM --- */
+  background: rgba(0, 21, 255, 0.6); /* Couleur bleue avec 60% d'opacité (transparence) */
+  backdrop-filter: blur(10px);       
+  -webkit-backdrop-filter: blur(10px); 
+  /* --- FIN GLASSMORPHISM --- */
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  color: white;
+  margin-left: 1vw;
+  border-radius: 5px;
+  width: 34vw;
+  transition: background 0.3s ease; /* Animation fluide au survol */
+
+}
+
+
+.header__btn--connexion:hover {
+  background: rgba(0, 21, 255, 0.4); 
+}
+
+
+.header__btn--hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ /* background-color: blue; */
+}
+
+.header__btn--hamburger img {
+  width: 5vw;
+}
+
+/* main contenu de la page */
+
+.main__content{
+  /* background-color: blue; */
+  width: 97vw;
+  margin-left: 1.5vw;
+  margin-top: 2vh;
+}
+
+.main__container--titre{
+  /* background-color: red; */
+  font-family: 'HelveticaLight';
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.main__titre--aegis {
+  text-transform: uppercase;
+  font-size: 13.2vw;
+  text-align: justify;
+  text-align-last: justify; /* Applique la justification à la dernière ligne */
+}
+
+.main__description {
+  font-size: 3.1vw;
+  text-transform: uppercase;
+  font-family: 'Helvetica01';
+  line-height: 1.1;
+  margin-top: 0.5vh;
+  letter-spacing: -1px;
+}
+
+/* Le conteneur parent qui aligne tous les boutons */
+.main__socials-wrapper {
+  display: flex;
+  justify-content: space-between; /* Espace équitablement le texte et les icônes */
+  align-items: center;
+  width: 20vw;                    /* Même largeur qu'avant */
+  margin-top: 0.9vh;
+  gap: 0.5vw;                     /* Petit espace entre chaque bouton */
+}
+
+/* Le style commun partagé par TOUS les boutons (texte et icônes) */
+.social-btn {
+  /* --- DEBUT GLASSMORPHISM --- */
+ background: rgba(0, 21, 255, 0.6);
+ backdrop-filter: blur(10px);       
+ -webkit-backdrop-filter: blur(10px); 
+  /* --- FIN GLASSMORPHISM --- */
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  transition: background 0.3s ease; /* Animation fluide au survol */
+}
+
+.social-btn:hover {
+  background: rgba(0, 21, 255, 0.4); 
+}
+
+/* Style spécifique uniquement pour le bouton avec le texte */
+.social-btn--text {
+  flex-grow: 1;           /* Ce bouton prendra toute la place restante */
+  padding: 5px 10px;      /* Un peu de marge interne pour respirer */
+  font-size: 2.6vw;
+  text-transform: uppercase;
+  font-family: 'HelveticaMedium';
+}
+
+.social-btn--icon {
+  width: 3.7vh;           
+  height: 3.5vh;         
+}
+
+.social-btn--icon img {
+  height: 2.2vh;
+  object-fit: cover;
+}
+
+/* footer & CTA */
+
+.footer__content {
+  /* background-color: blue; */
+  height: 21vh;
+  width: 100vw;
+  margin-top: auto;
+  width: 97vw;
+  margin-left: 1.5vw;
+  margin-top: 33vh;
+}
+
+.footer__promocard{
+  /* --- DEBUT GLASSMORPHISM --- */
+  background: rgba(126, 126, 128, 0.6); /* Couleur bleue avec 60% d'opacité (transparence) */
+  backdrop-filter: blur(10px);       
+  -webkit-backdrop-filter: blur(10px); 
+  /* --- FIN GLASSMORPHISM --- */
+  
+  height: 5vh;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'HelveticaLight';
+  text-transform: uppercase;
+  font-size: 1.6vh;
+  color: white;
+  border-radius: 5px;
+}
+
+.promocard__promocard--text {
+  text-transform: uppercase;
+}
+
+/* CTA */
+
+.footer__btn--appdownload{
+  /* --- DEBUT GLASSMORPHISM --- */
+  background: rgba(0, 21, 255, 0.6); /* Couleur bleue avec 60% d'opacité (transparence) */
+  backdrop-filter: blur(10px);       
+  -webkit-backdrop-filter: blur(10px); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
+  /* --- FIN GLASSMORPHISM --- */
+  
+  height: 12vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'HelveticaLight';
+  color: white;
+  margin-top: 0.8vh;
+  border-radius: 5px;
+  transition: background 0.3s ease; /* Animation survol */
+}
+
+
+.footer__btn--appdownload:hover{
+  background: rgba(0, 21, 255, 0.4); 
+
+}
+
+
+.footer__btn--text{
+  text-transform: uppercase;
+  font-size: 5vh;
+}
+
+/* CTA */
+
+.footer__container--legal{
+  /* background-color: purple; */
+  width: 100%;
+  height: 4vh;
+  margin-top: 0.8vh;
+  line-height: 1;
+}
+
+.footer__legal--text{
+  font-size: 0.85vh;
+  text-align: justify;
+  text-transform: uppercase;
+  font-family: 'HelveticaLight';
+}
