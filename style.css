@@ -1,4 +1,4 @@
-¨£Mù/* 1. Utiliser un box-sizing plus intuitif */
+/* 1. Utiliser un box-sizing plus intuitif */
 *,
 *::before,
 *::after {
@@ -20,6 +20,12 @@ body {
 body {
   line-height: 1.5; /* Meilleure lisibilité que le '1' de Meyer */
   -webkit-font-smoothing: antialiased; /* Rendu des polices plus lisse */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  overflow: hidden;
+  max-height: 100vh;
 }
 
 /* 4. Améliorer le rendu des médias (essentiel pour le responsive) */
@@ -83,8 +89,7 @@ select {
   src: url('/font/HelveticaNeue-Thin-13.woff2') format('woff2');
 }
 
-.container__image--background{
-  /* background-color: red; */
+.container__image--background {
   height: 100vh;
   width: 100vw;
   position: fixed;
@@ -95,15 +100,6 @@ select {
   width: 100%;       
   height: 100%;     
   object-fit: cover;
-}
-
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
-    overflow: hidden;
-    max-height: 100vh;
 }
 
 a {
@@ -130,7 +126,6 @@ header {
   display: flex;
   justify-content: space-between;
   z-index: 99;
-  /* background-color: orange; */
   font-size: 2.4vh;
   font-family: 'HelveticaLight';
   margin-top: 1vh;
@@ -140,16 +135,12 @@ header {
 
 .header__account {
   display: flex;
-  /* background-color: red; */
 }
 
 .header__btn--inscription {
-  /* --- DEBUT GLASSMORPHISM --- */
   background: rgba(0, 21, 255, 0.6);
   backdrop-filter: blur(10px);       
-  -webkit-backdrop-filter: blur(10px); /* Pour que le flou fonctionne sur les navigateurs Safari/Apple */
-  /* --- FIN GLASSMORPHISM --- */
-  
+  -webkit-backdrop-filter: blur(10px); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,23 +148,17 @@ header {
   color: white;
   border-radius: 5px;
   width: 25vw;
-    transition: background 0.3s ease; /* Animation fluide au survol */
-
+  transition: background 0.3s ease; 
 }
-
 
 .header__btn--inscription:hover {
   background: rgba(0, 21, 255, 0.4); 
 }
 
-
-.header__btn--connexion{
-  /* --- DEBUT GLASSMORPHISM --- */
+.header__btn--connexion {
   background: rgba(0, 21, 255, 0.6); 
   backdrop-filter: blur(10px);       
   -webkit-backdrop-filter: blur(10px); 
-  /* --- FIN GLASSMORPHISM --- */
-  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -182,21 +167,17 @@ header {
   margin-left: 1vw;
   border-radius: 5px;
   width: 34vw;
-  transition: background 0.3s ease; /* Animation au survol */
-
+  transition: background 0.3s ease; 
 }
-
 
 .header__btn--connexion:hover {
   background: rgba(0, 21, 255, 0.4); 
 }
 
-
 .header__btn--hamburger {
   display: flex;
   justify-content: center;
   align-items: center;
- /* background-color: blue; */
 }
 
 .header__btn--hamburger img {
@@ -205,15 +186,17 @@ header {
 
 /* main contenu de la page */
 
-.main__content{
-  /* background-color: blue; */
+main {
+  flex: 1; /* rempli l'espace vide */
+}
+
+.main__content {
   width: 97vw;
   margin-left: 1.5vw;
   margin-top: 2vh;
 }
 
-.main__container--titre{
-  /* background-color: red; */
+.main__container--titre {
   font-family: 'HelveticaLight';
   line-height: 1;
   letter-spacing: -1px;
@@ -223,7 +206,7 @@ header {
   text-transform: uppercase;
   font-size: 13.2vw;
   text-align: justify;
-  text-align-last: justify; /* Applique la justification à la dernière ligne */
+  text-align-last: justify; 
 }
 
 .main__description {
@@ -235,7 +218,6 @@ header {
   letter-spacing: -1px;
 }
 
-/* parent des boutons */
 .main__socials-wrapper {
   display: flex;
   justify-content: space-between; 
@@ -245,31 +227,26 @@ header {
   gap: 0.5vw;                   
 }
 
-/* meme style pout tous les botuons */
 .social-btn {
-  /* --- DEBUT GLASSMORPHISM --- */
- background: rgba(0, 21, 255, 0.6);
- backdrop-filter: blur(10px);       
- -webkit-backdrop-filter: blur(10px); 
-  /* --- FIN GLASSMORPHISM --- */
-  
+  background: rgba(0, 21, 255, 0.6);
+  backdrop-filter: blur(10px);       
+  -webkit-backdrop-filter: blur(10px); 
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
   text-decoration: none;
   color: white;
-  transition: background 0.3s ease; /* Animation au survol */
+  transition: background 0.3s ease; 
 }
 
 .social-btn:hover {
   background: rgba(0, 21, 255, 0.4); 
 }
 
-/* Style spécifique uniquement pour le bouton avec le texte */
 .social-btn--text {
   flex-grow: 1;           
-  padding: 5px 10px;      /* 5px=bottomtop et 10px=leftright */
+  padding: 5px 10px;      
   font-size: 2.6vw;
   text-transform: uppercase;
   font-family: 'HelveticaMedium';
@@ -285,25 +262,18 @@ header {
   object-fit: cover;
 }
 
-/* footer & CTA */
+/* Éléments de l'ancien footer (promocard & CTA) déplacés dans le main */
 
 .footer__content {
-  /* background-color: blue; */
-  height: 21vh;
-  width: 100vw;
-  margin-top: auto;
   width: 97vw;
   margin-left: 1.5vw;
-  margin-top: 33vh;
+  margin-top: 35vh;
 }
 
-.footer__promocard{
-  /* --- DEBUT GLASSMORPHISM --- */
-  background: rgba(126, 126, 128, 0.6); /* Couleur bleue avec 60% d'opacité (transparence) */
+.footer__promocard {
+  background: rgba(126, 126, 128, 0.6); 
   backdrop-filter: blur(10px);       
   -webkit-backdrop-filter: blur(10px); 
-  /* --- FIN GLASSMORPHISM --- */
-  
   height: 5vh;
   width: 50vw;
   display: flex;
@@ -316,55 +286,51 @@ header {
   border-radius: 5px;
 }
 
-.promocard__promocard--text {
+.footer__promocard--text {
   text-transform: uppercase;
 }
 
-/* CTA */
-
-.footer__btn--appdownload{
-  /* --- DEBUT GLASSMORPHISM --- */
-  background: rgba(0, 21, 255, 0.6); /* Couleur bleue avec 60% d'opacité (transparence) */
+.footer__btn--appdownload {
+  background: rgba(0, 21, 255, 0.6); 
   backdrop-filter: blur(10px);       
   -webkit-backdrop-filter: blur(10px); 
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
-  /* --- FIN GLASSMORPHISM --- */
-  
   height: 12vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'HelveticaLight';
+  font-family: 'Helvetica01';
   color: white;
   margin-top: 0.8vh;
   border-radius: 5px;
-  transition: background 0.3s ease; /* Animation survol */
+  transition: background 0.3s ease; 
 }
 
-
-.footer__btn--appdownload:hover{
+.footer__btn--appdownload:hover {
   background: rgba(0, 21, 255, 0.4); 
-
 }
 
-
-.footer__btn--text{
+.footer__btn--text {
   text-transform: uppercase;
   font-size: 5vh;
 }
 
-/* CTA */
+/* footer & Légal */
 
-.footer__container--legal{
-  /* background-color: purple; */
+footer {
+  width: 97vw;
+  margin-left: 1.5vw;
+  margin-bottom: 3vh;
+}
+
+.footer__container--legal {
   width: 100%;
-  height: 4vh;
+  height: 2vh;
   margin-top: 0.8vh;
   line-height: 1;
 }
 
-.footer__legal--text{
+.footer__legal--text {
   font-size: 0.85vh;
   text-align: justify;
   text-transform: uppercase;
