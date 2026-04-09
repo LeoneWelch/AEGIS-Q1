@@ -145,8 +145,8 @@ header {
 
 .header__btn--inscription {
   /* --- DEBUT GLASSMORPHISM --- */
-  background: rgba(0, 21, 255, 0.6); /* Couleur bleue avec 60% d'opacité (transparence) */
-  backdrop-filter: blur(10px);       /* Effet de flou sur ce qui se trouve DERRIÈRE la div */
+  background: rgba(0, 21, 255, 0.6);
+  backdrop-filter: blur(10px);       
   -webkit-backdrop-filter: blur(10px); /* Pour que le flou fonctionne sur les navigateurs Safari/Apple */
   /* --- FIN GLASSMORPHISM --- */
   
@@ -169,7 +169,7 @@ header {
 
 .header__btn--connexion{
   /* --- DEBUT GLASSMORPHISM --- */
-  background: rgba(0, 21, 255, 0.6); /* Couleur bleue avec 60% d'opacité (transparence) */
+  background: rgba(0, 21, 255, 0.6); 
   backdrop-filter: blur(10px);       
   -webkit-backdrop-filter: blur(10px); 
   /* --- FIN GLASSMORPHISM --- */
@@ -182,7 +182,7 @@ header {
   margin-left: 1vw;
   border-radius: 5px;
   width: 34vw;
-  transition: background 0.3s ease; /* Animation fluide au survol */
+  transition: background 0.3s ease; /* Animation au survol */
 
 }
 
@@ -235,17 +235,17 @@ header {
   letter-spacing: -1px;
 }
 
-/* Le conteneur parent qui aligne tous les boutons */
+/* parent des boutons */
 .main__socials-wrapper {
   display: flex;
-  justify-content: space-between; /* Espace équitablement le texte et les icônes */
+  justify-content: space-between; 
   align-items: center;
-  width: 20vw;                    /* Même largeur qu'avant */
+  width: 20vw;                    
   margin-top: 0.9vh;
-  gap: 0.5vw;                     /* Petit espace entre chaque bouton */
+  gap: 0.5vw;                   
 }
 
-/* Le style commun partagé par TOUS les boutons (texte et icônes) */
+/* meme style pout tous les botuons */
 .social-btn {
   /* --- DEBUT GLASSMORPHISM --- */
  background: rgba(0, 21, 255, 0.6);
@@ -259,7 +259,7 @@ header {
   border-radius: 5px;
   text-decoration: none;
   color: white;
-  transition: background 0.3s ease; /* Animation fluide au survol */
+  transition: background 0.3s ease; /* Animation au survol */
 }
 
 .social-btn:hover {
@@ -268,8 +268,8 @@ header {
 
 /* Style spécifique uniquement pour le bouton avec le texte */
 .social-btn--text {
-  flex-grow: 1;           /* Ce bouton prendra toute la place restante */
-  padding: 5px 10px;      /* Un peu de marge interne pour respirer */
+  flex-grow: 1;           
+  padding: 5px 10px;      /* 5px=bottomtop et 10px=leftright */
   font-size: 2.6vw;
   text-transform: uppercase;
   font-family: 'HelveticaMedium';
