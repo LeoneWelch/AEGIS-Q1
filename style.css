@@ -170,6 +170,8 @@ header {
   transition: background 0.3s ease; 
 }
 
+
+
 .header__btn--connexion:hover {
   background: rgba(0, 21, 255, 0.4); 
 }
