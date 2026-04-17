@@ -1,340 +1,321 @@
-/* 1. Utiliser un box-sizing plus intuitif */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* 2. Retirer les marges par défaut pour tout le monde */
-* {
-  margin: 0;
-  padding: 0;
-}
-
-/* 3. Permettre des hauteurs en pourcentage et une base propre */
-html,
-body {
-  height: 100%;
-}
-
-body {
-  line-height: 1.5; /* Meilleure lisibilité que le '1' de Meyer */
-  -webkit-font-smoothing: antialiased; /* Rendu des polices plus lisse */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-  overflow: hidden;
-  max-height: 100vh;
-}
-
-/* 4. Améliorer le rendu des médias (essentiel pour le responsive) */
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-/* 5. Éviter que les textes débordent (très utile sur mobile) */
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-
-/* 6. Harmoniser les polices des formulaires (qui ne l'héritent pas par défaut) */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* 7. Supprimer les animations pour les personnes qui les supportent mal (Accessibilité) */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-@font-face {
-  font-family: 'Helvetica01';
-  src: url('/font/HelveticaNeue-01.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'HelveticaLight';
-  src: url('/font/HelveticaNeue-Light-08.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'HelveticaMedium';
-  src: url('/font/HelveticaNeue-Medium-11.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'HelveticaThin';
-  src: url('/font/HelveticaNeue-Thin-13.woff2') format('woff2');
-}
-
-.container__image--background {
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  z-index: -10;
-}
-
-.image--background {
-  width: 100%;       
-  height: 100%;     
-  object-fit: cover;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-a:visited {
-  text-decoration: none;
-  color: white;
-}
-
-a:hover {
-  text-decoration: none;
-  color: white;
-}
-
-/* header bar de navigation */
-
-header {
-  width: 97vw;
-  margin-left: 1.5vw;
-  height: 4vh;
-  display: flex;
-  justify-content: space-between;
-  z-index: 99;
-  font-size: 2.4vh;
-  font-family: 'HelveticaLight';
-  margin-top: 1vh;
-  font-weight: 500;
-  letter-spacing: -1px;
-}
-
-.header__account {
-  display: flex;
-}
-
-.header__btn--inscription {
-  background: rgba(0, 21, 255, 0.6);
-  backdrop-filter: blur(10px);       
-  -webkit-backdrop-filter: blur(10px); 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2px;
-  color: white;
-  border-radius: 5px;
-  width: 25vw;
-  transition: background 0.3s ease; 
-}
-
-.header__btn--inscription:hover {
-  background: rgba(0, 21, 255, 0.4); 
-}
-
-.header__btn--connexion {
-  background: rgba(0, 21, 255, 0.6); 
-  backdrop-filter: blur(10px);       
-  -webkit-backdrop-filter: blur(10px); 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2px;
-  color: white;
-  margin-left: 1vw;
-  border-radius: 5px;
-  width: 34vw;
-  transition: background 0.3s ease; 
-}
-
-
-
-.header__btn--connexion:hover {
-  background: rgba(0, 21, 255, 0.4); 
-}
-
-.header__btn--hamburger {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header__btn--hamburger img {
-  width: 5vw;
-}
-
-/* main contenu de la page */
-
-main {
-  flex: 1; /* rempli l'espace vide */
-}
-
-.main__content {
-  width: 97vw;
-  margin-left: 1.5vw;
-  margin-top: 2vh;
-}
-
-.main__container--titre {
-  font-family: 'HelveticaLight';
-  line-height: 1;
-  letter-spacing: -1px;
-}
-
-.main__titre--aegis {
-  text-transform: uppercase;
-  font-size: 13.2vw;
-  text-align: justify;
-  text-align-last: justify; 
-}
-
-.main__description {
-  font-size: 3.1vw;
-  text-transform: uppercase;
-  font-family: 'Helvetica01';
-  line-height: 1.1;
-  margin-top: 0.5vh;
-  letter-spacing: -1px;
-}
-
-.main__socials-wrapper {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;
-  width: 20vw;                    
-  margin-top: 0.9vh;
-  gap: 0.5vw;                   
-}
-
-.social-btn {
-  background: rgba(0, 21, 255, 0.6);
-  backdrop-filter: blur(10px);       
-  -webkit-backdrop-filter: blur(10px); 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  text-decoration: none;
-  color: white;
-  transition: background 0.3s ease; 
-}
-
-.social-btn:hover {
-  background: rgba(0, 21, 255, 0.4); 
-}
-
-.social-btn--text {
-  flex-grow: 1;           
-  padding: 5px 10px;      
-  font-size: 2.6vw;
-  text-transform: uppercase;
-  font-family: 'HelveticaMedium';
-}
-
-.social-btn--icon {
-  width: 3.7vh;           
-  height: 3.5vh;         
-}
-
-.social-btn--icon img {
-  height: 2.2vh;
-  object-fit: cover;
-}
-
-/* Éléments de l'ancien footer (promocard & CTA) déplacés dans le main */
-
-.footer__content {
-  width: 97vw;
-  margin-left: 1.5vw;
-  margin-top: 35vh;
-}
-
-.footer__promocard {
-  background: rgba(126, 126, 128, 0.6); 
-  backdrop-filter: blur(10px);       
-  -webkit-backdrop-filter: blur(10px); 
-  height: 5vh;
-  width: 50vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'HelveticaLight';
-  text-transform: uppercase;
-  font-size: 1.6vh;
-  color: white;
-  border-radius: 5px;
-}
-
-.footer__promocard--text {
-  text-transform: uppercase;
-}
-
-.footer__btn--appdownload {
-  background: rgba(0, 21, 255, 0.6); 
-  backdrop-filter: blur(10px);       
-  -webkit-backdrop-filter: blur(10px); 
-  height: 12vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Helvetica01';
-  color: white;
-  margin-top: 0.8vh;
-  border-radius: 5px;
-  transition: background 0.3s ease; 
-}
-
-.footer__btn--appdownload:hover {
-  background: rgba(0, 21, 255, 0.4); 
-}
-
-.footer__btn--text {
-  text-transform: uppercase;
-  font-size: 5vh;
-}
-
-/* footer & Légal */
-
-footer {
-  width: 97vw;
-  margin-left: 1.5vw;
-  margin-bottom: 3vh;
-}
-
-.footer__container--legal {
-  width: 100%;
-  height: 2vh;
-  margin-top: 0.8vh;
-  line-height: 1;
-}
-
-.footer__legal--text {
-  font-size: 0.85vh;
-  text-align: justify;
-  text-transform: uppercase;
-  font-family: 'HelveticaLight';
-}
+/* ============================================================
+   RESET
+   ============================================================ */
+   *, *::before, *::after { box-sizing: border-box; }
+   * { margin: 0; padding: 0; }
+   
+   /* ============================================================
+      FONTS — toujours un fallback système pour Safari
+      ============================================================ */
+   @font-face {
+     font-family: 'Helvetica01';
+     src: url('/font/HelveticaNeue-01.woff2') format('woff2');
+     font-display: swap;
+   }
+   @font-face {
+     font-family: 'HelveticaLight';
+     src: url('/font/HelveticaNeue-Light-08.woff2') format('woff2');
+     font-display: swap;
+   }
+   @font-face {
+     font-family: 'HelveticaMedium';
+     src: url('/font/HelveticaNeue-Medium-11.woff2') format('woff2');
+     font-display: swap;
+   }
+   @font-face {
+     font-family: 'HelveticaThin';
+     src: url('/font/HelveticaNeue-Thin-13.woff2') format('woff2');
+     font-display: swap;
+   }
+   
+   /* ============================================================
+      VARIABLES
+      ============================================================ */
+   :root {
+     --font-regular:  'Helvetica01',    'Helvetica Neue', Helvetica, Arial, sans-serif;
+     --font-light:    'HelveticaLight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+     --font-medium:   'HelveticaMedium','Helvetica Neue', Helvetica, Arial, sans-serif;
+     --font-thin:     'HelveticaThin',  'Helvetica Neue', Helvetica, Arial, sans-serif;
+   
+     --color-brand:       rgba(0, 21, 255, 0.6);
+     --color-brand-hover: rgba(0, 21, 255, 0.4);
+     --color-card-grey:   rgba(126, 126, 128, 0.6);
+   
+     --radius: 5px;
+     --blur: blur(10px);
+   
+     /* padding horizontal global — un seul endroit à changer */
+     --gutter: 1.5vw;
+   }
+   
+   /* ============================================================
+      MÉDIAS
+      ============================================================ */
+   img, picture, video, canvas, svg {
+     display: block;
+     max-width: 100%;
+   }
+   p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+   input, button, textarea, select { font: inherit; }
+   
+   @media (prefers-reduced-motion: reduce) {
+     *, *::before, *::after {
+       animation-duration: 0.01ms !important;
+       animation-iteration-count: 1 !important;
+       transition-duration: 0.01ms !important;
+       scroll-behavior: auto !important;
+     }
+   }
+   
+   /* ============================================================
+      LIENS
+      ============================================================ */
+   a, a:visited, a:hover {
+     text-decoration: none;
+     color: white;
+   }
+   
+   /* ============================================================
+      LAYOUT RACINE
+      body = colonne flex qui occupe tout le viewport
+      • 100dvh corrige la barre Safari iOS (retractable)
+      • overflow hidden = no-scroll garanti
+      ============================================================ */
+   html {
+     /* dvh = dynamic viewport height, ignore la barre Safari */
+     height: 100dvh;
+     height: 100vh; /* fallback navigateurs anciens */
+   }
+   
+   body {
+     display: flex;
+     flex-direction: column;
+     /* prend la hauteur de html */
+     height: 100%;
+     overflow: hidden;
+     touch-action: none;
+   
+     font-family: var(--font-light);
+     line-height: 1.5;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+     text-rendering: optimizeLegibility;
+   }
+   
+   /* ============================================================
+      IMAGE DE FOND
+      ============================================================ */
+   .container__image--background {
+     position: fixed;
+     inset: 0;           /* top/right/bottom/left = 0, supporte mieux les bugs Safari */
+     z-index: -10;
+   }
+   
+   .image--background {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+   }
+   
+   /* ============================================================
+      HEADER
+      • padding au lieu de margin pour rester dans le flux flex
+      • flex-shrink: 0 = ne rétrécit jamais
+      ============================================================ */
+   header {
+     flex-shrink: 0;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 1.2vh var(--gutter) 0;  /* haut / côtés / bas */
+     z-index: 99;
+   
+     font-family: var(--font-light);
+     /* clamp(min, idéal-vh, max) — ni trop petit ni trop grand */
+     font-size: clamp(1.2rem, 2vh, 1rem);
+     font-weight: 500;
+     letter-spacing: -0.5px;
+   }
+   
+   .header__account {
+     display: flex;
+     gap: 1vw;
+     flex: 1;              /* prend l'espace disponible à gauche */
+   }
+   
+   /* Les deux boutons partagent la même base */
+   .header__btn--inscription,
+   .header__btn--connexion {
+     background: var(--color-brand);
+     -webkit-backdrop-filter: var(--blur);
+     backdrop-filter: var(--blur);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 0.4vh 1.5vw;  /* padding vertical + horizontal, pas de height fixe */
+     color: white;
+     border-radius: var(--radius);
+     white-space: nowrap;
+     transition: background 0.3s ease;
+   }
+   
+   /* Largeurs relatives — s'adaptent au viewport */
+   .header__btn--inscription { flex: 3; }   /* ratio 3:4 entre les deux boutons */
+   .header__btn--connexion   { flex: 4; }
+   
+   .header__btn--inscription:hover,
+   .header__btn--connexion:hover {
+     background: var(--color-brand-hover);
+   }
+   
+   .header__btn--hamburger {
+     flex-shrink: 0;
+     display: flex;
+     align-items: center;
+     padding-left: 1.5vw;
+   }
+   
+   .header__btn--hamburger img {
+     width: clamp(24px, 5vw, 40px);
+     height: auto;
+   }
+   
+   /* ============================================================
+      MAIN
+      • flex: 1 = prend tout l'espace entre header et footer
+      • display flex colonne = peut espacer ses enfants
+      ============================================================ */
+   main {
+     flex: 1;                  /* remplit l'espace restant — aucune height définie */
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;  /* contenu haut / footer-content bas */
+     overflow: hidden;
+     padding: 5vh var(--gutter) 0;    /* padding au lieu de margin-left + margin-top */
+   }
+   
+   /* ===== Titre ===== */
+   .main__container--titre {
+     font-family: var(--font-light);
+     line-height: 1;
+     letter-spacing: -1px;
+   }
+   
+   .main__titre--aegis {
+     text-transform: uppercase;
+     font-size: 7.6dvH;
+     text-align: justify;
+     text-align-last: justify;
+   }
+   
+   /* ===== Description ===== */
+   .main__description {
+     font-family: var(--font-regular);
+     text-transform: uppercase;
+     font-size: clamp(0.6rem, 2.8vw, 1.2rem);
+     line-height: 1.15;
+     letter-spacing: -0.3px;
+     padding-top: 0.6vh;  
+   }
+   
+   /* ===== Réseaux sociaux ===== */
+   .main__socials-wrapper {
+     display: flex;
+     align-items: center;
+     gap: clamp(6px, 1.5vw, 14px);
+     padding-top: 1vh;
+   }
+   
+   .social-btn {
+     background: var(--color-brand);
+     -webkit-backdrop-filter: var(--blur);
+     backdrop-filter: var(--blur);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: var(--radius);
+     color: white;
+     transition: background 0.3s ease;
+   }
+   
+   .social-btn:hover { background: var(--color-brand-hover); }
+   
+   .social-btn--icon {
+     padding: clamp(5px, 1vh, 10px);  /* padding = zone cliquable, pas de taille figée */
+   }
+   
+   .social-btn--icon img {
+     width: clamp(16px, 2.2vh, 26px);
+     height: clamp(16px, 2.2vh, 26px);
+     object-fit: contain;
+   }
+   
+   /* ============================================================
+      FOOTER CONTENT (inside main — promo + CTA)
+      ============================================================ */
+   .footer__content {
+     display: flex;
+     flex-direction: column;
+     gap: 0.8vh;
+     padding-bottom: 1vh;  /* respire avant le footer légal */
+   }
+   
+   .footer__promocard {
+     background: var(--color-card-grey);
+     -webkit-backdrop-filter: var(--blur);
+     backdrop-filter: var(--blur);
+     /* width = contenu + padding, pas de valeur fixe */
+     align-self: flex-start;
+     padding: 0.8vh 3vw;
+     font-family: var(--font-light);
+     text-transform: uppercase;
+     font-size: clamp(0.55rem, 1.5vh, 0.85rem);
+     color: white;
+     border-radius: var(--radius);
+   }
+   
+   .footer__btn--appdownload {
+     background: var(--color-brand);
+     -webkit-backdrop-filter: var(--blur);
+     backdrop-filter: var(--blur);
+     /* flex remplace height figée */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: clamp(10px, 2.2vh, 36px) 0;  /* padding vertical donne la hauteur */
+     border-radius: var(--radius);
+     color: white;
+     transition: background 0.3s ease;
+   }
+   
+   .footer__btn--appdownload:hover { background: var(--color-brand-hover); }
+   
+   .footer__btn--text {
+     text-transform: uppercase;
+     font-family: var(--font-regular);
+     font-size: clamp(1rem, 5vh, 2.8rem);
+   }
+   
+   /* ============================================================
+      FOOTER LÉGAL
+      • flex-shrink: 0 = ne rétrécit pas
+      • padding au lieu de margin
+      ============================================================ */
+   footer {
+     flex-shrink: 0;
+     padding: 0 var(--gutter) clamp(8px, 1vh, 20px);
+   }
+   
+   .footer__container--legal {
+     line-height: 1.3;
+   }
+   
+   .footer__legal--text {
+     font-family: var(--font-light);
+     font-size: clamp(0.45rem, 0.8vh, 0.7rem);  /* (minimum taille, taille préféré, taille maximum) */
+     text-align: justify;
+     text-transform: uppercase;
+     color: black;
+   }
+   
+   .footer__legal--text a { color: grey; }
