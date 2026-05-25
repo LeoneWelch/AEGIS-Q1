@@ -338,3 +338,8 @@ footer {
   text-transform: uppercase;
   font-family: 'HelveticaLight';
 }
+
+
+.footer__email::before {
+  content: attr(data-user) "@" attr(data-domain);
+}
