@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
 
-<img width="1000" height="1724" alt="screencapture-127-0-0-1-5500-index-html-2026-05-21-14_13_25" src="https://github.com/user-attachments/assets/0af4e4c0-c168-490c-8947-201c91dd52fe" />
+<img width="400" height="690" alt="screencapture-127-0-0-1-5500-index-html-2026-05-21-14_13_25" src="https://github.com/user-attachments/assets/0af4e4c0-c168-490c-8947-201c91dd52fe" />
 
 ## À propos du projet
 
